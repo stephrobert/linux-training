@@ -25,8 +25,12 @@ L'objectif de ce lab est de vérifier la création d'un fichier `test.txt` dans 
 1. Créez un fichier appelé `test.txt` dans `/home/vagrant`.
 2. Le contenu du fichier doit être : `Ce fichier a été créé pour le test.`
 
-### Pour valider le test :
+### Pour valider le lab :
 
-1. Lancez `vagrant up` pour démarrer l'environnement.
-2. Vérifiez que le fichier `test.txt` existe dans le répertoire `/home/vagrant`.
-3. Vérifiez que le contenu du fichier est correct.
+Lancer la commande suivante :
+
+```bash
+make test1
+```
+
+Si le playbook s'est bien exécuté, vous devriez ne pas avoir d'erreur.
