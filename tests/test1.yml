@@ -1,0 +1,28 @@
+---
+- name: Test la création du fichier test.txt
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Récupération des informations du fichier /home/vagrant/test.txt
+      ansible.builtin.stat:
+        path: /home/vagrant/test.txt
+      register: file_stat
+
+    - name: Vérification que le fichier existe
+      ansible.builtin.assert:
+        that:
+          - file_stat.stat.exists == true
+        fail_msg: "Le fichier test.txt n'existe pas"
+
+    - name: Lecture du contenu du fichier test.txt
+      ansible.builtin.slurp:
+        path: /home/vagrant/test.txt
+      register: file_content
+
+    - name: Vérification du contenu du fichier
+      ansible.builtin.assert:
+        that:
+          - "'Ce fichier a été créé pour le test.' in file_content.content | b64decode"
+        fail_msg: "Le contenu du fichier test.txt est incorrect"
+        success_msg: "Le fichier test.txt a été créé avec succès et contient le bon texte."
