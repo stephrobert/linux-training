@@ -1,15 +1,9 @@
-Voici la nouvelle version **complète**, enrichie et corrigée selon tes instructions :
-- **Installation de `tldr`** proposée,
-- **Suppression** des commandes système inutiles (`hostname`, `uptime`, `date`, etc.),
-- **Garde uniquement** `cal` pour l'information calendrier.
-
----
-
 # TP : Les Commandes de Base Linux — **Naviguer, manipuler et explorer le système de fichiers**
 
 ## Objectif
 
 Apprendre à :
+
 - Se déplacer dans l'**arborescence Linux**,
 - **Créer, copier, déplacer, renommer et supprimer** des fichiers et des dossiers,
 - **Lire, rechercher, compter** et **analyser** du contenu texte,
@@ -17,6 +11,12 @@ Apprendre à :
 
 **Remarque** : Ce TP est entièrement guidé. Dans les suivants, **vous devrez chercher les informations vous-même**. Donc n'hésitez pas à vous poser des questions pour essayer de comprendre ce qui se passe.
 
+---
+
+## Prérequis
+
+- Avoir lu la documentation sur les commandes de
+  [base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/).
 ---
 
 ## 📚 Utiliser l'aide intégrée
