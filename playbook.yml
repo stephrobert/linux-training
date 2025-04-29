@@ -1,8 +1,0 @@
----
-- name: Création de l'inventaire
-  hosts: all
-  gather_facts: false
-  tasks:
-    - name: Juste un test
-      ansible.builtin.debug:
-        msg: "C'est un test"
