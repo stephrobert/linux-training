@@ -11,8 +11,8 @@ plus autonome dans l'exécution des tâches demandées.
 
 ### Environnement
 
-- Une machine physique avec une **Debian** fraîchement installée (par exemple
-  Debian 12).
+- Une machine physique avec une distribution **Debian** ou une de ses dérivées
+  fraîchement installée (par exemple Debian 12).
 - **Accès administrateur (root)** ou un utilisateur pouvant utiliser `sudo`.
 - **Virtualisation activée** dans le BIOS/UEFI (Intel VT-x ou AMD-V), car
   certains TP utiliseront la **virtualisation** pour manipuler d'autres
@@ -38,7 +38,7 @@ sudo apt install python3 python3-pip
 - Installer **pytest** et **testinfra** pour valider vos exercices :
 
 ```bash
-pip3 install pytest testinfra
+pip3 install -r requirements.txt
 ```
 
 - Cloner ce dépôt :
