@@ -15,7 +15,7 @@ Apprendre à :
 - **Lire, rechercher, compter** et **analyser** du contenu texte,
 - Utiliser l'**aide en ligne** efficacement.
 
-**Remarque** : Ce TP est entièrement guidé. Dans les suivants, **vous devrez chercher les informations vous-même**.
+**Remarque** : Ce TP est entièrement guidé. Dans les suivants, **vous devrez chercher les informations vous-même**. Donc n'hésitez pas à vous poser des questions pour essayer de comprendre ce qui se passe.
 
 ---
 
