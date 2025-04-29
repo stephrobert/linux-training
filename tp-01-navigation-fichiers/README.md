@@ -327,6 +327,114 @@ wc -c fruits.txt
 
 ---
 
+## 📑 Analyser des fichiers
+
+### 1. Vérifier le type d'un fichier
+
+Déterminez le type de **fichier1.txt** :
+
+```bash
+file mon-premier-dossier/fichier1.txt
+```
+
+Testez aussi avec un fichier binaire comme `/bin/ls` :
+
+```bash
+file /bin/ls
+```
+
+### 2. Afficher les métadonnées d'un fichier
+
+Obtenez toutes les informations sur **fichier3_renomme.txt** :
+
+```bash
+stat mon-premier-dossier/fichier3_renomme.txt
+```
+
+Observez :
+
+- Taille,
+- Dates de création/modification,
+- Permissions.
+
+---
+
+## 🧮 Vérifier l'occupation disque
+
+### 1. Taille d'un fichier ou dossier
+
+Affichez la taille d'un seul fichier :
+
+```bash
+du -h mon-premier-dossier/fichier1.txt
+```
+
+Affichez la taille totale du dossier **mon-premier-dossier** :
+
+```bash
+du -sh mon-premier-dossier
+```
+
+Détaillez tous les fichiers et sous-dossiers :
+
+```bash
+du -h mon-premier-dossier
+```
+
+### 2. Espace disque disponible
+
+Visualisez l'espace disque global :
+
+```bash
+df -h
+```
+
+## 🔍 Recherche de fichiers
+
+### 1. Utiliser `find`
+
+Recherchez tous les fichiers `.txt` dans **mon-premier-dossier** :
+
+```bash
+find mon-premier-dossier -name "*.txt"
+```
+
+Recherchez tous les fichiers dans **mon-premier-dossier** modifiés il y a moins d'un jour :
+
+```bash
+find mon-premier-dossier -mtime -1
+```
+
+### 2. Utiliser `locate`
+
+Mettez à jour la base de données `locate` (sur Debian) :
+
+```bash
+sudo apt install plocate
+```
+
+Recherchez un fichier contenant `fichier1` :
+
+```bash
+locate fichier1
+```
+
+### 3. Utiliser `which` et `whereis`
+
+Localisez le chemin du binaire `ls` :
+
+```bash
+which ls
+```
+
+Localisez toutes les informations sur `bash` :
+
+```bash
+whereis bash
+```
+
+---
+
 ## 🛠️ Évaluation avec pytest
 
 Exécuter les tests :
