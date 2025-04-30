@@ -175,4 +175,7 @@ Le lien vers la documentation complète est disponible
 ## 🏁 Challenge à valider
 
 Consultez le dossier [`challenge/`](./challenge/) pour réaliser un exercice
-final permettant de valider vos compétences à l'aide de tests automatisés.
+final permettant de valider vos compétences à l'aide de tests automatisés. Une
+fois le challenge terminé, je vous invite à lire mon guide sur [les bonnes
+pratiques de développement de scripts
+Shell](https://blog.stephane-robert.info/docs/admin-serveurs/linux/scripts-shell-securises/).
