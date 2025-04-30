@@ -28,10 +28,6 @@ Charlie,17
 
 ## ⚙️ Contraintes
 
-- Fournissez un script **`analyse_utilisateurs.sh`**.
-- Il doit être placé à la racine du dossier `challenge/`.
-- Les résultats doivent être placés dans un fichier resultat.txt, et la
-  liste des majeurs qui doit être écrite dans `majeurs.txt`.
 - Le script ne doit utiliser **aucune commande externe avancée** comme `awk`,
   `jq`, `python`, etc. : utilisez uniquement Bash, `read`, `cut`, `expr`, `if`,
   `while`, etc.
