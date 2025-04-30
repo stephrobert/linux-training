@@ -69,5 +69,4 @@ tests/test_tp.py::test_resultat5_existe_et_non_vide[local] PASSED               
 tests/test_tp.py::test_resultat5_contenu[local] PASSED                                                                                                                       [100%]
 
 === 6 passed in 0.19s ===
-``` 
-
+```
