@@ -50,3 +50,24 @@ Les fichiers suivants **doivent exister** :
 ```bash
 pytest -v
 ```
+
+Tous les tests doivent passer pour valider le challenge.
+
+```plaintext
+=== test session starts ===
+platform linux -- Python 3.9.22, pytest-8.3.5, pluggy-1.5.0 -- /home/bob/.pyenv/versions/3.9.22/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /home/bob/Projets/linux-training/tp-02-commandes-avancees/challenge
+plugins: testinfra-10.2.2
+collected 6 items
+
+tests/test_tp.py::test_resultat1_existe_et_non_vide[local] PASSED                                                                                                            [ 16%]
+tests/test_tp.py::test_resultat2_existe_et_non_vide[local] PASSED                                                                                                            [ 33%]
+tests/test_tp.py::test_resultat3_existe_et_non_vide[local] PASSED                                                                                                            [ 50%]
+tests/test_tp.py::test_resultat4_existe_et_non_vide[local] PASSED                                                                                                            [ 66%]
+tests/test_tp.py::test_resultat5_existe_et_non_vide[local] PASSED                                                                                                            [ 83%]
+tests/test_tp.py::test_resultat5_contenu[local] PASSED                                                                                                                       [100%]
+
+=== 6 passed in 0.19s ===
+``` 
+
