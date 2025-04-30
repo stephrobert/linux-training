@@ -1,0 +1,3 @@
+root:x:0:0:root:/root:/bin/bash
+user1:x:1001:1001:User One:/home/user1:/bin/bash
+user2:x:1002:1002:User Two:/home/user2:/bin/bash

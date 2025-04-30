@@ -1,0 +1,4 @@
+2023-04-01 INFO Démarrage du système
+2023-04-01 ERROR Échec de la connexion
+2023-04-02 INFO Mise à jour appliquée
+2023-04-03 ERROR Disque plein
