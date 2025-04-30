@@ -1,0 +1,5 @@
+Ce fichier contient une liste de répertoires.
+documents
+telechargements
+musique
+images

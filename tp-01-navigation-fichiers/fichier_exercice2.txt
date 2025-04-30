@@ -1,0 +1,3 @@
+Bonjour et bienvenue dans le monde Linux.
+Ce fichier sera utilisé pour des tests de copie.
+Merci de ne pas modifier son contenu.

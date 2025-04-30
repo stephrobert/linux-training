@@ -1,23 +1,35 @@
-# TP : Les Commandes de Base Linux — **Naviguer, manipuler et explorer le système de fichiers**
+# TP : Commandes de base sous Linux
 
-## Objectif
+## Introduction
 
-Apprendre à :
+Ce TP vous permettra de maîtriser les commandes Linux de base telles que `ls`, `cd`, `pwd`, `cp`, `mv`, `rm`, `mkdir`, `rmdir`, `chmod`, `chown`, `cat`, `less`, `head`, `tail`, `find`, `locate`, `jobs`, `bg`, `fg`. Ces commandes sont essentielles pour naviguer et manipuler les fichiers et répertoires sous Linux.
 
-- Se déplacer dans l'**arborescence Linux**,
-- **Créer, copier, déplacer, renommer et supprimer** des fichiers et des dossiers,
-- **Lire, rechercher, compter** et **analyser** du contenu texte,
-- Utiliser l'**aide en ligne** efficacement.
-
-**Remarque** : Ce TP est entièrement guidé. Dans les suivants, **vous devrez chercher les informations vous-même**. Donc n'hésitez pas à vous poser des questions pour essayer de comprendre ce qui se passe.
+Toutes ces commandes sont expliquées dans mon guide sur [les commandes de
+base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/).
 
 ---
 
-## Prérequis
+## 🔄 Rappels de commandes
 
-- Avoir lu la documentation sur les commandes de
-  [base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/).
----
+- `ls` : liste les fichiers et répertoires du répertoire courant.
+- `cd` : change de répertoire.
+- `pwd` : affiche le chemin absolu du répertoire courant.
+- `cp` : copie des fichiers ou répertoires.
+- `mv` : déplace ou renomme des fichiers ou répertoires.
+- `rm` : supprime des fichiers ou répertoires.
+- `mkdir` : crée un nouveau répertoire.
+- `rmdir` : supprime un répertoire vide.
+- `chmod` : modifie les permissions d'un fichier ou répertoire.
+- `chown` : change le propriétaire d'un fichier ou répertoire.
+- `cat` : affiche le contenu d'un fichier.
+- `less` : affiche le contenu d'un fichier page par page.
+- `head` : affiche les premières lignes d'un fichier.
+- `tail` : affiche les dernières lignes d'un fichier.
+- `find` : recherche des fichiers dans une hiérarchie de répertoires.
+- `locate` : recherche rapide de fichiers en utilisant une base de données.
+- `jobs` : affiche les tâches en cours dans le shell.
+- `bg` : reprend une tâche arrêtée en arrière-plan.
+- `fg` : reprend une tâche arrêtée en avant-plan.
 
 ## 📚 Utiliser l'aide intégrée
 
@@ -64,406 +76,175 @@ man grep
 grep --help
 ```
 
----
+## 🔢 Tutoriels
 
-## 🧭 Se repérer dans le système
+### Exercice 1 : Navigation basique
 
-### 1. Vérifier où vous êtes
+Fichier utilisé : `fichiers/fichier_exercice1.txt`
+
+1. Affichez le chemin absolu du répertoire courant :
 
 ```bash
 pwd
 ```
 
-Afficher l'utilisateur connecté :
+Cette commande vous indique où vous vous situez dans l’arborescence des fichiers.
 
-```bash
-whoami
-```
-
-Afficher l'identifiant utilisateur :
-
-```bash
-id
-```
-
-Le resultat de `id` doit être `uid=1000(votre_nom_utilisateur)
-gid=1000(votre_nom_utilisateur)`, puis d'autres groupes.
-
-### 2. Explorer l'environnement
-
-Lister les fichiers visibles et cachés :
+2. Listez le contenu de ce répertoire :
 
 ```bash
 ls
-ls -a
-ls -lh
 ```
 
-Afficher les permissions et propriétaires :
+Cela vous montre les fichiers et dossiers présents.
 
-```bash
-ls -l
-```
+---
 
-### 3. Se déplacer dans l'arborescence
+### Exercice 2 : Création et suppression
 
-Aller dans `/tmp`, puis revenir au répertoire personnel :
+Fichier utilisé : `fichiers/fichier_exercice2.txt`
+
+1. Déplacez-vous dans le répertoire `/tmp` :
 
 ```bash
 cd /tmp
-pwd
-cd ~
-pwd
+```
+
+2. Créez un dossier `test` :
+
+```bash
+mkdir test
+```
+
+3. Supprimez ce dossier :
+
+```bash
+rmdir test
+```
+
+4. Revenez dans le répertoire précédent :
+
+```bash
+cd -
 ```
 
 ---
 
-## 📁 Manipuler les fichiers et répertoires
+### Exercice 3 : Manipulation de fichiers
 
-### 1. Créer un dossier de travail
+Fichier utilisé : `fichiers/fichier_exercice3.txt`
+
+1. Copiez `fichier_exercice3.txt` vers un nouveau fichier `copie.txt` :
 
 ```bash
-cd ~/linux-training/tp-01-navigation-fichiers
-mkdir mon-premier-dossier
-cd mon-premier-dossier
+cp fichiers/fichier_exercice3.txt copie.txt
 ```
 
-Créer un sous-dossier :
+2. Renommez-le en `renomme.txt` :
 
 ```bash
-mkdir sous-dossier
+mv copie.txt renomme.txt
 ```
 
-Créer plusieurs fichiers rapidement :
+3. Supprimez `renomme.txt` :
 
 ```bash
-touch fichier1.txt fichier2.txt fichier3.txt
-```
-
-Afficher l'état actuel :
-
-```bash
-ls -R
-```
-
-Vous devez voir :
-
-```bash
-.:
-fichier1.txt  fichier2.txt  fichier3.txt  sous-dossier
-
-./sous-dossier:
-```
-
-### 2. Ajouter du contenu
-
-Insérer du texte :
-
-```bash
-echo "Ceci est un test de contenu dans fichier1.txt" > fichier1.txt
-echo -e "ligne1\nligne2\nligne3\nligne4\nligne5" > fichier2.txt
-echo -e "apple\nbanana\ncherry\nbanana\napple\nlemon\norange" > fruits.txt
-```
-
-### 3. Lire et naviguer dans les fichiers
-
-Afficher tout le contenu :
-
-```bash
-cat fichier1.txt
-```
-
-Lire page par page :
-
-```bash
-less fichier2.txt
-```
-
-Appuyer sur `q` pour quitter.
-
-Voir les premières lignes :
-
-```bash
-head -n 2 fichier2.txt
-```
-
-Voir les dernières lignes :
-
-```bash
-tail -n 1 fichier2.txt
+rm renomme.txt
 ```
 
 ---
 
-## 🗂️ Copier, déplacer, renommer et supprimer
+### Exercice 4 : Affichage et recherche dans les fichiers
 
-### 1. Copier et renommer des fichiers
+Fichier utilisé : `fichiers/fichier_exercice4.txt`
 
-Copier un fichier :
+1. Affichez les 5 premières lignes du fichier :
 
 ```bash
-cp fichier1.txt sous-dossier/fichier1_copie.txt
+head -n 5 fichiers/fichier_exercice4.txt
 ```
 
-Renommer un fichier :
+2. Affichez les 3 dernières lignes du fichier :
 
 ```bash
-mv fichier3.txt fichier3_renomme.txt
+tail -n 3 fichiers/fichier_exercice4.txt
 ```
 
-### 2. Déplacer des fichiers
-
-Déplacer un fichier :
+3. Affichez l’intégralité du fichier avec pagination :
 
 ```bash
-mv fichier2.txt sous-dossier/
-```
-
-Déplacer plusieurs fichiers :
-
-```bash
-mv fruits.txt sous-dossier/
-```
-
-Vérifiez le contenu :
-
-```bash
-ls -R
-```
-
-Vous devez voir :
-
-```bash
-.:
-fichier1.txt  fichier3_renomme.txt  sous-dossier
-
-./sous-dossier:
-fichier1_copie.txt  fichier2.txt  fruits.txt
-```
-
-### 3. Supprimer fichiers et dossiers
-
-Supprimer un fichier spécifique :
-
-```bash
-rm sous-dossier/fichier1_copie.txt
-```
-
-Supprimer plusieurs fichiers :
-
-```bash
-rm sous-dossier/*
-```
-
-Supprimer un dossier vide :
-
-```bash
-rmdir sous-dossier
-```
-
-Créer puis supprimer un dossier contenant des fichiers :
-
-```bash
-mkdir dossier_temp
-touch dossier_temp/temp1.txt dossier_temp/temp2.txt
-rm -r dossier_temp
+less fichiers/fichier_exercice4.txt
 ```
 
 ---
 
-## 🔎 Rechercher et analyser du contenu
+### Exercice 5 : Permissions et propriétaires
 
-### 1. Chercher dans des fichiers
+Fichier utilisé : `fichiers/fichier_exercice5.txt`
 
-Créer un fichier de test :
+1. Donnez les droits d’exécution au fichier :
 
 ```bash
-echo -e "apple\nbanana\ncherry\nlemon\norange" > fruits.txt
+chmod +x fichiers/fichier_exercice5.txt
 ```
 
-Afficher toutes les lignes contenant "apple" :
+2. Changez le propriétaire du fichier (nécessite sudo) :
 
 ```bash
-grep apple fruits.txt
-```
-
-Rechercher "banana" :
-
-```bash
-grep banana fruits.txt
-```
-
-Compter les occurrences :
-
-```bash
-grep -c apple fruits.txt
-```
-
-### 2. Compter lignes, mots, caractères
-
-Compter tout dans un fichier :
-
-```bash
-wc fichier1.txt
-```
-
-Compter uniquement les lignes :
-
-```bash
-wc -l fruits.txt
-```
-
-Compter les mots :
-
-```bash
-wc -w fruits.txt
-```
-
-Compter les caractères :
-
-```bash
-wc -c fruits.txt
+sudo chown $USER fichiers/fichier_exercice5.txt
 ```
 
 ---
 
-## 📑 Analyser des fichiers
+### Exercice 6 : Recherche de fichiers
 
-### 1. Vérifier le type d'un fichier
-
-Déterminez le type de **fichier1.txt** :
+1. Recherchez tous les fichiers `.txt` dans le répertoire courant et ses sous-répertoires :
 
 ```bash
-file mon-premier-dossier/fichier1.txt
+find . -name "*.txt"
 ```
 
-Testez aussi avec un fichier binaire comme `/bin/ls` :
+2. Recherchez les fichiers modifiés au cours des 7 derniers jours dans `/var/log` :
 
 ```bash
-file /bin/ls
+find /var/log -mtime -7
 ```
 
-### 2. Afficher les métadonnées d'un fichier
-
-Obtenez toutes les informations sur **fichier3_renomme.txt** :
+3. Utilisez `locate` pour trouver un fichier nommé `passwd` :
 
 ```bash
-stat mon-premier-dossier/fichier3_renomme.txt
-```
-
-Observez :
-
-- Taille,
-- Dates de création/modification,
-- Permissions.
-
----
-
-## 🧮 Vérifier l'occupation disque
-
-### 1. Taille d'un fichier ou dossier
-
-Affichez la taille d'un seul fichier :
-
-```bash
-du -h mon-premier-dossier/fichier1.txt
-```
-
-Affichez la taille totale du dossier **mon-premier-dossier** :
-
-```bash
-du -sh mon-premier-dossier
-```
-
-Détaillez tous les fichiers et sous-dossiers :
-
-```bash
-du -h mon-premier-dossier
-```
-
-### 2. Espace disque disponible
-
-Visualisez l'espace disque global :
-
-```bash
-df -h
-```
-
-## 🔍 Recherche de fichiers
-
-### 1. Utiliser `find`
-
-Recherchez tous les fichiers `.txt` dans **mon-premier-dossier** :
-
-```bash
-find mon-premier-dossier -name "*.txt"
-```
-
-Recherchez tous les fichiers dans **mon-premier-dossier** modifiés il y a moins d'un jour :
-
-```bash
-find mon-premier-dossier -mtime -1
-```
-
-### 2. Utiliser `locate`
-
-Mettez à jour la base de données `locate` (sur Debian) :
-
-```bash
-sudo apt install plocate
-```
-
-Recherchez un fichier contenant `fichier1` :
-
-```bash
-locate fichier1
-```
-
-### 3. Utiliser `which` et `whereis`
-
-Localisez le chemin du binaire `ls` :
-
-```bash
-which ls
-```
-
-Localisez toutes les informations sur `bash` :
-
-```bash
-whereis bash
+locate passwd
 ```
 
 ---
 
-## 🛠️ Évaluation avec pytest
+### Exercice 7 : Gestion des tâches
 
-Exécuter les tests :
-
-```bash
-cd ~/linux-training/tp01-navigation-fichiers
-pytest -v
-```
-
-Vérifiez que tous les tests passent. Si un test échoue, corrigez votre code.
-Voici ce que vous devriez voir :
+1. Lancez une commande en arrière-plan (par exemple, un `sleep` de 60 secondes) :
 
 ```bash
---- test session starts ----
-platform linux -- Python 3.9.22, pytest-8.3.5, pluggy-1.5.0 -- /home/bob/.pyenv/versions/3.9.22/bin/python3.9
-cachedir: .pytest_cache
-rootdir: /home/bob/Projets/linux-training/tp-01-navigation-fichiers
-plugins: testinfra-10.2.2
-collected 4 items
-
-tests/test_tp.py::test_dossier_existe PASSED                                                                                            [ 25%]
-tests/test_tp.py::test_fichiers_presents PASSED                                                                                         [ 50%]
-tests/test_tp.py::test_contenu_fichier1 PASSED                                                                                          [ 75%]
-tests/test_tp.py::test_contenu_fruits PASSED                                                                                            [100%]
-
------- 4 passed in 0.03s -------
+sleep 60 &
 ```
 
----
+2. Listez les tâches en cours dans le shell :
 
-**À partir du prochain TP** : seules **les actions** seront décrites. Vous devrez chercher **vous-même** comment utiliser les commandes !
+```bash
+jobs
+```
+
+3. Arrêtez temporairement une tâche en cours avec `Ctrl+Z`, puis reprenez-la en arrière-plan :
+
+```bash
+bg
+```
+
+4. Ramenez une tâche en avant-plan :
+
+```bash
+fg
+```
+
+## 🎯 Challenge
+
+Consultez le dossier [`challenge/`](./challenge/) pour réaliser un exercice final permettant de valider vos compétences à l'aide de tests automatisés.
 

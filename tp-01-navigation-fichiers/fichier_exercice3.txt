@@ -1,0 +1,5 @@
+Ce fichier doit être déplacé.
+Il est temporaire et n'a pas de valeur définitive.
+Vous pouvez le déplacer vers un nouveau dossier.
+Contenu à supprimer.
+Ce texte ne devrait plus exister après l'exercice.
