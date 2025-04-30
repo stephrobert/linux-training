@@ -79,17 +79,25 @@ Chaque TP est placé dans un **sous-dossier** indépendant :
 │
 ├── tp01-navigation-fichiers/
 │   └── README.md
-├── tp02-gestion-utilisateurs/
+│   └── challenge/
+│       ├── README.md
+│       └── tests/
+│           └── test_tp.py
+├── tp-02-commandes-avancees/
 │   └── README.md
-├── tp03-gestion-reseau/
-│   └── README.md
-...
+│   └── challenge/
+│       ├── README.md
+│       └── tests/
+│           └── test_tp.py
+├── ...
 ```
 
 Chaque sous-dossier contient :
 
 - Un fichier `README.md` avec les consignes.
-- Un fichier `test_*.py` pour valider automatiquement votre travail.
+- Un dossier `challenge/` avec :
+  - Un fichier `README.md` avec les consignes.
+  - Un dossier tests contenant un fichier `test_tp.py` pour valider automatiquement votre travail.
 
 ## Comment travailler sur un TP
 
