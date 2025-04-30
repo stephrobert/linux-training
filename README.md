@@ -105,10 +105,11 @@ Chaque sous-dossier contient :
    site](https://blog.stephane-robert.info/docs/).
 2. Lire attentivement le `README.md` contenu dans le dossier du TP.
 3. Effectuer les tâches demandées dans votre terminal.
-4. Vérifier votre travail avec **pytest** :
+4. Relever le challenge dans le dossier `challenge/` :
+5. Vérifier votre travail avec **pytest** :
 
 ```bash
-pytest
+pytest -v
 ```
 
 Les tests vous indiqueront si votre solution est correcte.
