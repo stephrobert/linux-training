@@ -177,7 +177,6 @@ awk -F',' '$2 > 30' fichiers/exercice5.txt | nl
 
 ## 🏁 Challenge à valider
 
-Rendez-vous dans le dossier `challenge/` pour relever le défi final. Vous devrez
-combiner plusieurs commandes pour analyser des fichiers journaux et générer un
-rapport synthétique. Les tests automatisés valideront votre solution.
+Consultez le dossier [`challenge/`](./challenge/) pour réaliser un exercice
+final permettant de valider vos compétences à l'aide de tests automatisés.
 
