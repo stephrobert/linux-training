@@ -111,4 +111,5 @@ Les tests vous indiqueront si votre solution est correcte.
 - **Cherchez par vous-même** avec l'aide des commandes Linux (`--help`, `man`,
   etc.).
 - **Validez vos résultats** uniquement via les tests automatisés.
-
+- **Si vous bloquez**, n'hésitez pas à demander de l'aide sur
+  [le discord](https://blog.stephane-robert.info/docs/discord/).
