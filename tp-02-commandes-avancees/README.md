@@ -1,186 +1,183 @@
-# TP 2 : Maîtriser les Commandes Avancées de Linux
+# TP  : Commandes avancées Linux
 
-## Objectif
+## 🧠 Introduction
 
-Apprendre à :
+Ce TP vous permettra de maîtriser des commandes Linux avancées essentielles pour
+l'administration système. Vous apprendrez à manipuler des fichiers, gérer des
+processus et analyser l'utilisation du disque.
 
-- Surveiller les **ressources système**,
-- Gérer les **processus**,
-- Manipuler, trier et transformer des **données texte**,
-- Automatiser des traitements avec des **scripts shell**.
+Ces commandes sont expliquées dans mon guide sur [les commandes
+avancées](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes-avancees/).
 
-**Remarque** : Ce TP est en partie guidé. Dans la partie 3, **vous devrez vous
-débrouillez seul**. Donc n'hésitez pas à vous poser des questions pour essayer
-de comprendre ce qui se passe.
+## 📚 Résumé des commandes abordées
 
-## Prérequis
+- **`uname`** : affiche des informations sur le système.
+- **`free`** : affiche l'utilisation de la mémoire.
+- **`diff`** : compare le contenu de deux fichiers.
+- **`ps`** : affiche les processus en cours.
+- **`top`** : affiche les processus en temps réel.
+- **`cut`** : extrait des sections de lignes de fichiers.
+- **`tr`** : traduit ou supprime des caractères.
+- **`paste`** : fusionne des lignes de fichiers.
+- **`join`** : joint des lignes de deux fichiers sur une clé commune.
+- **`comm`** : compare deux fichiers ligne par ligne.
+- **`nl`** : numérote les lignes d'un fichier.
+- **`tee`** : lit l'entrée standard et écrit dans un fichier et la sortie
+  standard.
+- **`rev`** : inverse les lignes caractère par caractère.
+- **`fold`** : plie les lignes longues.
+- **`sed`** : édite des fichiers en ligne de commande.
+- **`awk`** : traite et analyse des fichiers texte.
 
-- Avoir lu la documentation sur les commandes de
-  [base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/)
-  et
-  [avancées](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes-avancees/).
+## 🧪 Exercices
+
+### Exercice 1 : Afficher des informations sur le système
+
+**Objectif** : Utiliser `uname` pour afficher des informations sur le système.
+
+**Commande** :
+
+```bash
+uname -a
+```
+
+**Explication** : `uname -a` affiche toutes les informations disponibles sur le
+système.
+
+**Tester les autres options de `uname`** : `-a`, `-s`, `-r`, `-v`, `-m`, `-p`,
+`-i`, `-o`
 
 ---
 
-## 📁 Préparation de l'environnement
+### Exercice 2 : Afficher l'utilisation de la mémoire
 
-Placez-vous dans le répertoire de travail :
+**Objectif** : Utiliser `free` pour afficher l'utilisation de la mémoire.
 
-```bash
-cd ~/linux-training/tp-02-commandes-avancees
-```
-
-Créez un nouveau dossier de travail :
-
-```bash
-mkdir mon-second-dossier
-cd mon-second-dossier
-mkdir data
-cd data
-```
-
-Créez les fichiers suivants :
-
-```bash
-seq 1 100 > nombres.txt
-yes "ligne identique" | head -n 10 > lignes.txt
-echo -e "apple\nbanana\napple\ncherry\nbanana\ncherry\napple" > fruits.txt
-```
-
----
-
-## 🏁 Partie 1 : Analyse système (guidée)
-
-### 1. Occupation disque
-
-```bash
-df -h
-du -sh .
-du -h nombres.txt
-```
-
-### 2. Utilisation mémoire et charge
+**Commande** :
 
 ```bash
 free -h
-uptime
 ```
 
-### 3. Observer les processus
 
-```bash
-ps aux | head -n 10
-top
-```
+**Explication** : `free -h` affiche l'utilisation de la mémoire en format
+lisible.
 
-Pour quitter `top`, appuyez sur `q`.
-
-Lancez un processus de test :
-
-```bash
-yes > /dev/null &
-```
-
-Trouvez son PID :
-
-```bash
-ps aux | grep "yes"
-```
-
-Arrêtez-le :
-
-```bash
-kill <PID>
-```
+**Tester les autres options de `free`** `-h`, `-m`, `-g`
 
 ---
 
-## 🔧 Partie 2 : Manipulations de fichiers texte (guidée)
+### Exercice 3 : Comparer deux fichiers
 
-### 1. Encadrer chaque ligne de `nombres.txt` avec des crochets
+**Fichiers** : `fichiers/exercice3a.txt`, `fichiers/exercice3b.txt`
 
-```bash
-cat nombres.txt | xargs -n 1 | sed 's/^/[/' | sed 's/$/]/' > nombres_formates.txt
-```
+**Objectif** : Utiliser `diff` pour comparer deux fichiers.
 
-### 2. Extraire les 3 premières lettres de chaque ligne de `fruits.txt`
+**Commande** :
 
 ```bash
-cut -c 1-3 fruits.txt > fruits_cut.txt
+diff fichiers/exercice3a.txt fichiers/exercice3b.txt
+2c2
+< ligne2
+---
+> ligneModifiee
 ```
 
-### 3. Trier et supprimer les doublons
+**Explication** :
 
-```bash
-sort fruits.txt > fruits_tries.txt
-uniq fruits_tries.txt > fruits_uniques.txt
-```
+- `2c2` : indique que **la ligne 2** du premier fichier est **changée** (`c`
+  pour "change") par rapport à la ligne 2 du second fichier.
+- `< ligne2` : montre le contenu de la ligne 2 dans le **premier fichier**
+  (`exercice3a.txt`) — ici : `ligne2`.
+- `>` ligneModifiee` : montre le contenu de la ligne 2 dans le **second
+  fichier** (`exercice3b.txt`) — ici : `ligneModifiee`.
 
-### 4. Compter les occurrences
-
-```bash
-sort fruits.txt | uniq -c > fruits_stats.txt
-```
-
-### 5. Afficher et enregistrer en même temps
-
-```bash
-sort fruits.txt | tee fruits_output.txt
-```
+**Tester les autres options de `diff`** : `-u`, `-c`, `-y`
 
 ---
 
-## 🧩 Partie 3 — Manipulations de fichiers (consignes simplifiées)
+### Exercice 4 : Afficher les processus en cours
 
-> **But** : produire des fichiers de résultats. Vous devez deviner les commandes
-> à utiliser en vous aidant de `man`, `tldr` ou `--help`.
+**Objectif** : Utiliser `ps` pour afficher les processus en cours.
 
-1. Créez un fichier `crochets.txt` contenant les nombres de `nombres.txt`
-   entourés de `[]` (exemple : `[1]`, `[2]`, etc.). Utilisez la commande sed !
+**Commandes** :
 
-2. Dans `fruits.txt`, récupérez les **3 premières lettres** de chaque mot et
-   enregistrez-les dans `debut_fruits.txt`.
+```bash
+ps aux
+```
 
-3. Triez les lignes de `fruits.txt` par ordre alphabétique dans un fichier
-   `fruits_tries.txt`. Utilisez `sort`.
+**Explication** : `ps aux` affiche tous les processus en cours.
 
-4. Supprimez les doublons et enregistrez le résultat dans `fruits_uniques.txt`.
+**Tester les autres options de `ps`** : `a`, `u`, `x`;
 
-5. Comptez combien de fois chaque fruit apparaît et enregistrez dans
-   `compte_fruits.txt`. Utilisez `sort` et `uniq`.
+La commande ps affiche les processus en cours d'exécution sur le système. Les
+options `a`, `u` et `x` permettent d'afficher des informations détaillées sur
+les processus, y compris ceux qui n'ont pas de terminal associé.
 
-6. Ajoutez un horodatage dans un fichier `journal_execution.txt`.
+### Exercice 5 : Manipuler des fichiers texte
+
+#### 🧪 Exercice 5.1 : Extraire et transformer des colonnes
+
+**Fichier** : `fichiers/exercice5.txt` (format CSV : `nom,age`)
+
+**Objectif** : Extraire les prénoms et les convertir en majuscules.
+
+**Commandes** :
+
+```bash
+cut -d',' -f1 fichiers/exercice5.txt | tr 'a-z' 'A-Z'
+```
+
+**Explication** :
+
+- `cut -d',' -f1` : extrait la première colonne, ici les prénoms.
+- `tr 'a-z' 'A-Z'` : transforme les minuscules en majuscules.
 
 ---
 
-## 🛠️ Évaluation avec pytest
+#### 🧪 Exercice 5.2 : Rechercher et remplacer dans un fichier
 
-Exécuter les tests :
+**Fichier** : `fichiers/exercice5.txt`
+
+**Objectif** : Remplacer tous les âges "30" par "31".
+
+**Commande** :
 
 ```bash
-cd ../..
-pytest -v
+sed 's/30/31/g' fichiers/exercice5.txt
 ```
 
-Vous devez voir un message indiquant que tous les tests sont passés. Si ce n'est pas
-le cas, corrigez votre code.
+**Explication** :
+
+- `sed` permet de faire des remplacements avec des expressions régulières.
+- Ici, on remplace toutes les occurrences de `30` par `31`.
+
+---
+
+#### 🧪 Exercice 5.3 : Filtrer et numéroter des lignes
+
+**Fichier** : `fichiers/exercice5.txt`
+
+**Objectif** : Afficher uniquement les personnes âgées de plus de 30 ans et
+numéroter les lignes.
+
+**Commande** :
 
 ```bash
-❯ pytest -v
-============================================================= test session starts =============================================================
-platform linux -- Python 3.9.22, pytest-8.3.5, pluggy-1.5.0 -- /home/bob/.pyenv/versions/3.9.22/bin/python3.9
-cachedir: .pytest_cache
-rootdir: /home/bob/Projets/linux-training/tp-02-commandes-avancees
-plugins: testinfra-10.2.2
-collected 6 items
+awk -F',' '$2 > 30' fichiers/exercice5.txt | nl
+```
 
-tests/test_tp.py::test_crochets_format PASSED                                                                                           [ 16%]
-tests/test_tp.py::test_debut_fruits PASSED                                                                                              [ 33%]
-tests/test_tp.py::test_fruits_tries PASSED                                                                                              [ 50%]
-tests/test_tp.py::test_fruits_uniques PASSED                                                                                            [ 66%]
-tests/test_tp.py::test_compte_fruits PASSED                                                                                             [ 83%]
-tests/test_tp.py::test_journal_execution PASSED                                                                                         [100%]
+**Explication** :
 
-======== 6 passed in 0.04s ========
+- `awk -F',' '$2 > 30'` : filtre les lignes où l'âge (2ᵉ champ) est supérieur à
+  30.
+- `nl` : numérote les lignes.
 
+---
+
+## 🏁 Challenge à valider
+
+Rendez-vous dans le dossier `challenge/` pour relever le défi final. Vous devrez
+combiner plusieurs commandes pour analyser des fichiers journaux et générer un
+rapport synthétique. Les tests automatisés valideront votre solution.
 
