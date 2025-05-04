@@ -122,3 +122,37 @@ Les tests vous indiqueront si votre solution est correcte.
 - **Validez vos résultats** uniquement via les tests automatisés.
 - **Si vous bloquez**, n'hésitez pas à demander de l'aide sur
   [le discord](https://blog.stephane-robert.info/docs/discord/).
+
+## Mise à jour du dépôt
+
+Je vais continuer à mettre à jour ce dépôt avec de nouveaux exercices et des
+améliorations. Pour récupérer les dernières modifications, vous pouvez
+simplement exécuter :
+
+```bash
+git pull origin main
+```
+
+## Contribuer
+
+Bien entendu, vous êtes invités à contribuer à ce dépôt en proposant des
+améliorations ou en corrigeant des erreurs. N'hésitez pas à ouvrir une **issue**
+ou à soumettre une **pull request**.
+
+Plus d'infos [ici](https://github.com/stephrobert/containers-training/blob/main/contributing.md)
+
+## Me soutenir
+
+Si vous appréciez ce travail et souhaitez me soutenir, vous pouvez me payer un
+café ☕️:
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/stephanerobert89902)
+
+## Copyright et licence
+
+Tous les contenus contenus dans ce repo sont :
+
+- Copyright ©2025 Stéphane Robert
+- Distribués sous [licence Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+![Creative Commons BY-SA](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
