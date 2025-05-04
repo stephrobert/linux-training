@@ -38,7 +38,9 @@ sudo apt install python3 python3-pip
 - Installer **pytest** et **testinfra** pour valider vos exercices :
 
 ```bash
-pip3 install -r requirements.txt
+pip install pipx --user
+pipx install pytest
+pipx inject pytest pytest-testinfra
 ```
 
 - Cloner ce dépôt :
