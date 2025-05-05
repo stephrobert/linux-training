@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Ce TP vous permettra de maîtriser les commandes Linux de base telles que `ls`, `cd`, `pwd`, `cp`, `mv`, `rm`, `mkdir`, `rmdir`, `chmod`, `chown`, `cat`, `less`, `head`, `tail`, `find`, `locate`, `jobs`, `bg`, `fg`. Ces commandes sont essentielles pour naviguer et manipuler les fichiers et répertoires sous Linux.
+Ce TP vous permettra de maîtriser les commandes Linux de base telles que `ls`, `cd`, `pwd`, `cp`, `mv`, `rm`, `mkdir`, `rmdir`, `chmod`, `chown`, `cat`, `less`, `head`, `tail`, `find`, `locate`. Ces commandes sont essentielles pour naviguer et manipuler les fichiers et répertoires sous Linux.
 
 Toutes ces commandes sont expliquées dans mon guide sur [les commandes de
 base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/).
@@ -27,9 +27,6 @@ base](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/).
 - `tail` : affiche les dernières lignes d'un fichier.
 - `find` : recherche des fichiers dans une hiérarchie de répertoires.
 - `locate` : recherche rapide de fichiers en utilisant une base de données.
-- `jobs` : affiche les tâches en cours dans le shell.
-- `bg` : reprend une tâche arrêtée en arrière-plan.
-- `fg` : reprend une tâche arrêtée en avant-plan.
 
 ## 📚 Utiliser l'aide intégrée
 
@@ -214,34 +211,6 @@ find /var/log -mtime -7
 
 ```bash
 locate passwd
-```
-
----
-
-### Exercice 7 : Gestion des tâches
-
-1. Lancez une commande en arrière-plan (par exemple, un `sleep` de 60 secondes) :
-
-```bash
-sleep 60 &
-```
-
-2. Listez les tâches en cours dans le shell :
-
-```bash
-jobs
-```
-
-3. Arrêtez temporairement une tâche en cours avec `Ctrl+Z`, puis reprenez-la en arrière-plan :
-
-```bash
-bg
-```
-
-4. Ramenez une tâche en avant-plan :
-
-```bash
-fg
 ```
 
 ## 🎯 Challenge
