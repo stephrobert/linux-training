@@ -1,4 +1,4 @@
-# TP  : Commandes avancées Linux
+# TP 02 : Commandes avancées Linux
 
 ## 🧠 Introduction
 
