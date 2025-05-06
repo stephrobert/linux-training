@@ -1,4 +1,3 @@
-
 # 🎯 Challenge Final : Maîtriser `xargs`
 
 **Objectif :** Supprimer tous les fichiers `.txt` présents dans le dossier `../fichiers/` en utilisant `xargs` de manière sécurisée (en tenant compte des espaces dans les noms de fichiers).
@@ -11,5 +10,5 @@
 ✅ Pour vérifier votre travail :
 
 ```bash
-pytest challenge/tests/
+pytest -v
 ```
