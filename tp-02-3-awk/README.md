@@ -1,4 +1,4 @@
-# TP 04 : Manipuler des fichiers texte avec `awk`
+# TP 02-03 : Manipuler des fichiers texte avec `awk`
 
 ## Introduction
 
