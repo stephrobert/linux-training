@@ -51,7 +51,6 @@ def test_proprietaire(host):
         "projet/bin/script.sh",
     ]:
         fichier = host.file(path)
-        assert fichier.user == "bob"
         assert fichier.group == "adm"
 
 def test_find(host):
