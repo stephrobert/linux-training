@@ -1,0 +1,7 @@
+
+INFO: Service démarré
+DEBUG: Variable x=42
+WARNING: Faible espace disque
+
+DEBUG: Vérification terminée
+ERROR: Connexion refusée

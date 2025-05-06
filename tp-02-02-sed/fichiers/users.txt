@@ -1,0 +1,6 @@
+# Liste initiale
+admin
+user1
+# Commentaire
+user2
+admin
