@@ -1,4 +1,4 @@
-# 🛠️ TP 02-07 : Maîtriser la commande `xargs`
+# 🛠️ TP 02-01 : Maîtriser la commande `xargs`
 
 ## Introduction
 
