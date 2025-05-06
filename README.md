@@ -57,6 +57,22 @@ python3 --version
 pytest --version
 ```
 
+A partir du TP 7, il sera nécessaire d'installer **Incus** (anciennement LXD).
+En effet, Incus est un gestionnaire de conteneurs et de machines virtuelles qui
+vous permet de créer et gérer des environnements virtuels. Il est
+particulièrement utile pour les TP qui risquent d'endommager votre instance de Linux.
+
+Pour l'installer, exécutez les commandes suivantes :
+
+```bash
+sudo apt install incus
+```
+- Initialiser Incus :
+
+```bash
+sudo inucs init --minimal
+```
+
 ## Documentation obligatoire
 
 Avant de commencer un TP, vous devez **lire la documentation** liée au sujet sur
