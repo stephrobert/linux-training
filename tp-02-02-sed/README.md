@@ -86,14 +86,14 @@ sed '1i\\# Rapport généré automatiquement' fichiers/report.csv
 **Commande attendue :**
 
 ```bash
-sed '/<VirtualHost>/,/<\\/VirtualHost>/c\\# Bloc supprimé par sécurité' fichiers/apache.conf
+outscale@dev:~/Projets/linux-training/tp-02-02-sed$ sed '/<VirtualHost.*>/,/<\/VirtualHost>/c\# Bloc supprimé par sécurité' fichiers/apache.conf
 ```
 
 ---
 
 ### 5 Utiliser un fichier de script sed
 
-**Fichier :** `fichiers/users.txt` **Script sed :** `fichiers/modifs.sed`
+**Fichier :** `fichiers/users.txt` **Script sed :** `modifs.sed`
 
 * Le fichier `modifs.sed` contient :
 
@@ -107,7 +107,7 @@ sed '/<VirtualHost>/,/<\\/VirtualHost>/c\\# Bloc supprimé par sécurité' fichi
 **Commande attendue :**
 
 ```bash
-sed -f fichiers/modifs.sed fichiers/users.txt
+sed -f modifs.sed fichiers/users.txt
 ```
 
 ---
