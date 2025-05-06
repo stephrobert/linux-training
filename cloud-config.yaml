@@ -1,4 +1,10 @@
 #cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    shell: /bin/bash
+    lock_passwd: true
 package_update: true
 package_upgrade: true
 packages:
@@ -11,3 +17,5 @@ write_files:
     content: |
        export PATH=$PATH:/home/ubuntu/.local/bin
     append: true
+runcmd:
+  - chown -R ubuntu:ubuntu /home/ubuntu
