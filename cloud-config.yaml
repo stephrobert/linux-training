@@ -1,0 +1,13 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - python3-pip
+  - pipx
+  - git
+  - python3-venv
+write_files:
+  - path: /home/ubuntu/.bashrc
+    content: |
+       export PATH=$PATH:/home/ubuntu/.local/bin
+    append: true
