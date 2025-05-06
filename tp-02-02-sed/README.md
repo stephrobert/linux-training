@@ -1,4 +1,4 @@
-# 🛠️ TP : Maîtriser la commande `sed`
+# 🛠️ TP 02-02 : Maîtriser la commande `sed`
 
 ## Introduction
 
