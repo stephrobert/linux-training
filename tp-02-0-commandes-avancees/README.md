@@ -180,3 +180,12 @@ awk -F',' '$2 > 30' fichiers/exercice5.txt | nl
 Consultez le dossier [`challenge/`](./challenge/) pour réaliser un exercice
 final permettant de valider vos compétences à l'aide de tests automatisés.
 
+## Aller plus loin
+
+J'ai commencé à rédiger des TP sur certaines de ces commandes. Vous pouvez
+trouver ces TP dans les sous-dossiers suivant :
+
+- [xargs](https://github.com/stephrobert/linux-training/tree/main/tp-02-1-xargs)
+- [awk](https://github.com/stephrobert/linux-training/tree/main/tp-02-3-awk)
+
+D'autres TP seront ajoutés au fur et à mesure de mes avancées.
