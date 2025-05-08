@@ -11,8 +11,9 @@ plus autonome dans l'exécution des tâches demandées.
 
 ### Environnement
 
-- Une machine physique avec une distribution **Debian** ou une de ses dérivées
-  fraîchement installée (par exemple Debian 12).
+- Une machine (ou wsl2 pour ceux qui sont sous windowss) avec une distribution
+  **Debian** ou une de ses dérivées fraîchement installée (par exemple Debian
+  12).
 - **Accès administrateur (root)** ou un utilisateur pouvant utiliser `sudo`.
 - **Virtualisation activée** dans le BIOS/UEFI (Intel VT-x ou AMD-V), car
   certains TP utiliseront la **virtualisation** pour manipuler d'autres
