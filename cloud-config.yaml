@@ -13,7 +13,7 @@ packages:
   - git
   - python3-venv
 write_files:
-  - path: /home/ubuntu/.bashrc
+  - path: /home/ubuntu/.profile
     content: |
        export PATH=$PATH:/home/ubuntu/.local/bin
     append: true
