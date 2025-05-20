@@ -14,16 +14,18 @@ une version précise d'un paquet, en respectant des préférences définies.
    ```
 
 2. Créer ou modifier le fichier `/etc/apt/preferences.d/nano` pour que le paquet `nano`
-   soit installé en version `2.9.8-1` avec une priorité de `1001` :
+   soit installé en version `7.2-2` avec une priorité de `1001`.
 
-3. Mettez à jour la liste des paquets et installez nano
+3. Mettez à jour la liste des paquets et installez nano.
+
 
 ### ✅ Validation
 
 Exécutez les tests avec la commande suivante :
 
 ```bash
-pytest challenge/tests/test_arborescence.py
+cd tp-07-paquets-apt
+pytest -v challenge/tests/test_tp.py
 ```
 
 Ce TP vous permettra de maîtriser les bases de la gestion des paquets avec APT
