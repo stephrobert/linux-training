@@ -18,7 +18,6 @@ une version précise d'un paquet, en respectant des préférences définies.
 
 3. Mettez à jour la liste des paquets et installez nano.
 
-
 ### ✅ Validation
 
 Exécutez les tests avec la commande suivante :
@@ -28,6 +27,18 @@ cd tp-07-paquets-apt
 pytest -v challenge/tests/test_tp.py
 ```
 
-Ce TP vous permettra de maîtriser les bases de la gestion des paquets avec APT
-sur Debian et ses dérivés. N'hésitez pas à explorer davantage les
-fonctionnalités avancées d'APT pour approfondir vos compétences.
+Vous devez obtenir un résultat similaire à celui-ci :
+
+```bash
+ pytest -v challenge/tests/test_tp.py
+=== test session starts ===
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.6.0 -- /home/ubuntu/.local/share/pipx/venvs/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /home/ubuntu/linux-training/tp-07-paquets-apt
+plugins: testinfra-10.2.2
+collected 2 items
+
+challenge/tests/test_tp.py::test_preferences[local] PASSED                                                      [ 50%]
+challenge/tests/test_tp.py::test_nano_version[local] PASSED                                                     [100%]
+
+=== 2 passed in 0.03s ===
