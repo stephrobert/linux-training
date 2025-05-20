@@ -94,11 +94,13 @@ lui-même.
      ```bash
      sudo apt install htop
      ```
+
   2. Vérifiez son installation avec :
 
      ```bash
      htop --version
      ```
+
   3. Supprimez-le sans effacer la configuration :
 
      ```bash
