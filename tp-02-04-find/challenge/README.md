@@ -11,14 +11,16 @@ Vous devez créer un fichier nommé `commande.txt` dans le répertoire
 critères suivants :
 
 1. **Recherche tous les fichiers `.log` de plus de 1 Mo** dans `fichiers/` ;
-2. **Les supprime automatiquement** ;
+2. **Les compresse automatiquement** ;
 3. **Affiche les chemins des fichiers supprimés** (grâce à `-print`).
 
-## 💡 Exemple attendu dans `commande.txt`
+Exemple attendu dans `commande.txt` :
 
 ```bash
 find fichiers/ -type f
 ```
+
+Exécutez la commande pour vérifier qu'elle fonctionne correctement.
 
 ## ✅ Critères de validation
 
