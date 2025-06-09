@@ -68,10 +68,11 @@ Pour l'installer, exécutez les commandes suivantes :
 ```bash
 sudo apt install incus
 ```
-- Initialiser Incus :
+
+Initialiser Incus :
 
 ```bash
-sudo inucs init --minimal
+sudo incus init --minimal
 ```
 
 ## Documentation obligatoire
