@@ -15,7 +15,7 @@ maintenir un système à jour et sécurisé.
 
 ## Pré-requis
 
-Il faut installer **Incus** sur votre mahcine pour ce TP. La procédure
+Il faut installer **Incus** sur votre machine pour ce TP. La procédure
 d'installation est décrite dans le fichier [README.md du
 projet](https://github.com/stephrobert/linux-training/blob/main/README.md).
 
@@ -24,13 +24,13 @@ avec les commandes suivantes depuis le dossier racine du projet `linux-training`
 :
 
 ```bash
-incus launch images:ubuntu/24.04/cloud tp  --config=cloud-init.user-data="$(cat cloud-config.yaml)"
-incus alias add login 'exec @ARGS@ -- su -l ubuntu'
+incus launch images:ubuntu/24.04/cloud ubuntu  --config=cloud-init.user-data="$(cat cloud-config.yaml)"
+incus alias add login 'exec @ARGS@ -- su -l admin'
 incus config device add tp mysharedfolder disk source=$PWD path=/home/ubuntu/linux-training shift=true
 ```
 
-La première commande créé une instance Ubuntu 24.04 sur laquelle est installé
-les packages néessaires au lancement des tests. La seconde commande permet de
+La première commande crée une instance Ubuntu 24.04 sur laquelle sont installés
+les packages nécessaires au lancement des tests. La seconde commande permet de
 créer un alias pour se connecter facilement à l'instance. La troisième permet de
 partager le dossier `linux-training` de votre machine hôte avec l'instance.
 
@@ -126,6 +126,7 @@ garde la config pour une réinstallation future.
      ```bash
      sudo apt clean
      ```
+
   3. Vérifiez que le cache est vidé.
 
 👉 **Explication** : `apt clean` supprime tous les fichiers `.deb` téléchargés,
@@ -154,6 +155,7 @@ affiche toutes les infos : dépendances, description, etc.
      ```bash
      sudo vi /etc/apt/sources.list.d/docker.list
      ```
+
   2. Ajoutez la ligne suivante :
 
      ```bash
@@ -172,6 +174,7 @@ affiche toutes les infos : dépendances, description, etc.
      ```bash
      sudo apt update
      ```
+
   5. Installez le paquet `docker-ce` :
 
      ```bash
@@ -198,4 +201,4 @@ découvrir votre mission finale !
 
 ---
 
-# ✅ Bon courage et amusez-vous avec APT 😄
+✅ Bon courage et amusez-vous avec APT 😄

@@ -1,6 +1,6 @@
 #cloud-config
 users:
-  - name: ubuntu
+  - name: admin
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: sudo
     shell: /bin/bash
@@ -13,9 +13,9 @@ packages:
   - git
   - python3-venv
 write_files:
-  - path: /home/ubuntu/.profile
+  - path: /home/admin/.profile
     content: |
-       export PATH=$PATH:/home/ubuntu/.local/bin
+       export PATH=$PATH:/home/admin/.local/bin
     append: true
 runcmd:
-  - chown -R ubuntu:ubuntu /home/ubuntu
+  - chown -R admin:admin /home/admin
