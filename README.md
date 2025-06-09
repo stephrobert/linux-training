@@ -11,7 +11,7 @@ plus autonome dans l'exécution des tâches demandées.
 
 ### Environnement
 
-- Une machine (ou wsl2 pour ceux qui sont sous windowss) avec une distribution
+- Une machine (ou wsl2 pour ceux qui sont sous windows) avec une distribution
   **Debian** ou une de ses dérivées fraîchement installée (par exemple Debian
   12).
 - **Accès administrateur (root)** ou un utilisateur pouvant utiliser `sudo`.
